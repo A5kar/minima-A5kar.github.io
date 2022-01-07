@@ -14,7 +14,7 @@ layout: default
             .then((commits) => {
               var modified = commits[0]['commit']['committer']['date'].slice(0,10);
               if(modified != "{{ page.date | date: date_format }}") {
-                document.getElementById('last-modified').textContent = "last modified " + modified;
+                document.getElementById('last-modified').textContent = "(last update " + modified + ")";
               }
             });
         }
