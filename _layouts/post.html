@@ -13,7 +13,7 @@ layout: default
             })
             .then((commits) => {
               var modified = commits[0]['commit']['committer']['date'].slice(0,10);
-              if(modified != "{{ page.date | date: "%Y-%m-%d" }}") {
+              if(modified != "{{ page.date | date: date_format }}") {
                 document.getElementById('last-modified').textContent = "last modified " + modified;
               }
             });
@@ -25,7 +25,7 @@ layout: default
       <time class="dt-published" datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">
         {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
         {{ page.date | date: date_format }}
-        <span id='last-modified'/>
+        hello <span id='last-modified'/> world
       </time>
       {%- if page.author -%}
         • <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span class="p-author h-card" itemprop="name">{{ page.author }}</span></span>
