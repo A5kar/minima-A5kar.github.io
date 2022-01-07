@@ -8,7 +8,15 @@
   {%- if jekyll.environment == 'production' and site.google_analytics -%}
     {%- include google-analytics.html -%}
   {%- endif -%}
-  <!-- MathJax -->
-  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  {%- if page.mathjax -%}
+    <script
+      src="https://polyfill.io/v3/polyfill.min.js?features=es6">
+    </script>
+    <script
+      id="MathJax-script"
+      async
+      src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://www.mathjax.org" rel="nofollow">LaTeX code rendered by MathJax.</a></noscript>
+  {%- endif -%}
 </head>
