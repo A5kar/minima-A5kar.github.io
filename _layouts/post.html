@@ -39,7 +39,7 @@ layout: default
     {%- include disqus_comments.html -%}
   {%- endif -%}
 
-  {%- if page.comments -%}
+  {%- if page.comments and jekyll.environment == "production" -%}
     {%- include utterances_comments.html -%}
   {%- endif -%}
 
